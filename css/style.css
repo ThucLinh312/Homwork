@@ -265,7 +265,7 @@ width: 30%;
   
  }
 
- /* Tablet: Dưới 1024px */
+
 @media (max-width: 1024px) {
   .navbar {
     flex-wrap: wrap;
@@ -306,7 +306,7 @@ width: 30%;
   }
 }
 
-/* Mobile ngang: Dưới 768px */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -355,7 +355,7 @@ width: 30%;
   }
 }
 
-/* Mobile dọc: Dưới 480px */
+
 @media (max-width: 480px) {
   .text-section h1 {
     font-size: 32px;
