@@ -8,10 +8,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
   color: #000;
-  padding:20px ;
+  padding: 20px;
   max-width: 1500px;
-  display: flex;
-  justify-content: center;
   margin: 0 auto;
 }
 
@@ -19,8 +17,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
   padding: 30px;
+  gap: 20px;
 }
 
 .logo img {
@@ -28,6 +27,7 @@ body {
   height: 40px;
   background-color: #0B284A;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -35,6 +35,7 @@ body {
   gap: 20px;
   align-items: center;
   font-weight: bold;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -48,34 +49,39 @@ body {
   gap: 5px;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+}
+
 .search input {
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 280px;
+  width: 100%;
 }
 
-
-
-.btn-outline {
-  background: #fff;
-  border: 1px solid #000;
+.btn-outline,
+.btn-black {
   padding: 10px 16px;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  width: fit-content;
+}
+
+.btn-outline {
+  background: #fff;
+  border: 1px solid #000;
 }
 
 .btn-black {
   background: #000;
   color: #fff;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
 }
-
 
 .hero-section {
   display: flex;
@@ -83,11 +89,11 @@ body {
   align-items: center;
   gap: 40px;
   padding: 30px;
-  
+  flex-wrap: wrap;
 }
 
 .text-section {
-  width: 50%;
+  flex: 1 1 450px;
 }
 
 .text-section h1 {
@@ -104,17 +110,20 @@ body {
 .buttons {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .image-section {
+  flex: 1 1 450px;
   position: relative;
-  width: 50%;
 }
 
 .image-section img {
   width: 100%;
   height: auto;
+  max-width: 100%;
   border-radius: 16px;
+  object-fit: contain;
 }
 
 .dots {
@@ -134,68 +143,78 @@ body {
 .dot.active {
   background: #000;
 }
-.product-container{
+
+.product-container {
   margin-top: 24px;
 }
-.product-container .product-title{
+
+.product-container .product-title {
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.product-list{
+
+.product-list {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
-  gap:20px;
-  justify-content: space-around;
-  
+  gap: 20px;
+  justify-content: center;
 }
+
 .product-items {
   width: 300px;
   border: 1px solid #ccc;
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
-  height: auto;
   margin-top: 30px;
- 
-
+  flex: 1 1 280px;
 }
-.product-items .img-container img{
+
+.product-items .img-container img {
   width: 100%;
-  height: 200px;
+  height: auto;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 10px;
+}
 
-  
-  
-  
+.product-info {
+  margin: 10px 0;
 }
-.product-info{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.user-info{
+
+.user-info {
   display: flex;
   align-items: center;
-  
+  gap: 8px;
 }
-.user-info img{
+
+.user-info img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-.features-container{
+.features-container {
   width: 70%;
-  margin:  0 auto;
+  margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 40px 20px;
+  gap: 20px;
 }
-.features-items{
-  margin-right: 30px;
+
+.features-items {
+  flex: 1 1 200px;
+  min-width: 150px;
 }
-.features-box{
+
+.features-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,104 +224,90 @@ body {
   border-radius: 5px;
 }
 
-.features-box i{
+.features-box i {
   color: white;
-  
 }
 
-.footer-container{
+.footer-container {
   border: 1px solid #ccc;
   padding: 30px;
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.platform{
-width: 30%;
-}
-.platform a{
-   
-  text-decoration: none;
-  color: #3D3D3D
-}
-.note p{
-  color: #3D3D3D;
-  width: 30%;
-}
-.contact-container{
-  width: 30%;
-}
-.social{
-  display: flex;
-  margin-top: 50px;
-  gap: 10px;
 
+.platform,
+.note p,
+.contact-container {
+  flex: 1 1 250px;
 }
-.social-icons{
-   border-radius: 100%;
+
+.platform a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
+
+.note p {
+  color: #3D3D3D;
+}
+
+.social {
+  display: flex;
+  margin-top: 30px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-icons {
+  border-radius: 100%;
   border: 1px solid #0A0A0A;
   padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.social i{
+
+.social i {
   font-size: large;
 }
-.footer{
- display: flex;
+
+.footer {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 30px;
+  gap: 20px;
 }
-.footer .footer-left{
+
+.footer-left {
   color: #3D3D3D;
 }
- .footer .footer-center{
-  
+
+.footer-center {
   color: #999;
   font-size: 14px;
   display: flex;
-  
- }
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 
 @media (max-width: 1024px) {
-  .navbar {
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .search input {
-    width: 200px;
-  }
-
   .hero-section {
     flex-direction: column;
     text-align: center;
   }
 
-  .text-section, .image-section {
-    width: 100%;
-  }
-
   .features-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .features-items {
-    width: 45%;
-    margin-bottom: 20px;
+    width: 100%;
   }
 
   .footer-container {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .platform, .note p, .contact-container {
-    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -320,25 +325,11 @@ width: 30%;
 
   .search {
     width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .search input {
-    width: 80%;
-  }
-
-  .button {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .product-list {
-    justify-content: center;
+    max-width: 300px;
   }
 
   .product-items {
-    width: 80%;
+    width: 90%;
   }
 
   .features-items {
@@ -346,7 +337,6 @@ width: 30%;
   }
 
   .footer-container {
-    flex-direction: column;
     text-align: center;
   }
 
@@ -354,7 +344,6 @@ width: 30%;
     justify-content: center;
   }
 }
-
 
 @media (max-width: 480px) {
   .text-section h1 {
@@ -373,7 +362,16 @@ width: 30%;
     width: 100%;
   }
 
-  .btn-black, .btn-outline {
+  .btn-black,
+  .btn-outline {
     width: 100%;
+  }
+
+  .image-section img {
+    max-height: 250px;
+  }
+
+  .product-items .img-container img {
+    max-height: 150px;
   }
 }
